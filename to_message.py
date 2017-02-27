@@ -23,10 +23,12 @@ def rand_char():
     return choice(ascii_letters)
 
 def add_char(msg):
-    return msg + rand_char()
+    add_index = randrange(len(msg))
+    return msg[0:add_index] + rand_char() + msg[add_index:]
 
 def del_char(msg):
-    return msg[1:]
+    del_index = randrange(len(msg))
+    return msg[0:del_index] + msg[del_index + 1:]
 
 def mutate_str(msg):
     mut_index = randrange(len(msg))
